@@ -1,0 +1,16 @@
+{
+  "name": "sgnl-plugin",
+  "description": "The SGNL plugin: one skill that runs an 18-hour cycle against your objectives.",
+  "owner": {
+    "name": "SGNL",
+    "url": "https://github.com/erichenschel/sgnl-plugin"
+  },
+  "plugins": [
+    {
+      "name": "sgnl",
+      "source": "./",
+      "description": "Run the SGNL method in a conversation: objectives, an 18-hour cycle, 3 to 5 sgnls with bits, done or blocked, and a closing recap and ratio.",
+      "category": "productivity"
+    }
+  ]
+}
