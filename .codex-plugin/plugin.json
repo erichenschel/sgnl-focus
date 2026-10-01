@@ -1,0 +1,44 @@
+{
+  "name": "sgnl-cycle",
+  "version": "0.1.0",
+  "description": "Run the SGNL method in a conversation: set 1 to 3 measurable objectives, open an 18-hour cycle from everything on your plate, get 3 to 5 sgnls with bits, report done or blocked, and close with a recap and ratio. Skills only.",
+  "author": {
+    "name": "Eric Henschel",
+    "url": "https://github.com/erichenschel"
+  },
+  "homepage": "https://github.com/erichenschel/sgnl-plugin",
+  "repository": "https://github.com/erichenschel/sgnl-plugin",
+  "license": "MIT",
+  "keywords": [
+    "planning",
+    "focus",
+    "objectives",
+    "daily-cycle",
+    "prioritization"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "SGNL Cycle",
+    "shortDescription": "Run 18-hour objective cycles",
+    "longDescription": "A fixed planning cycle you run in chat. You set 1 to 3 objectives, each with a date and a measurable end state. To open an 18-hour cycle, you paste everything on your plate, unsorted. Each item is scored against your objectives: only items that move an objective's end state inside its horizon become sgnls, capped at 3 to 5, each split into small do-and-expect bits. Everything else is listed once as noise. The sgnls stay fixed for the cycle, and you report only done or blocked. At close you give hours, and you get a ratio of sgnl hours to awake hours against a target of 80 percent and a floor of 50. Every reply ends with a short state block you can paste into a new chat to resume. The plugin keeps no record outside your chat and makes no network calls.",
+    "developerName": "Eric Henschel",
+    "category": "Productivity",
+    "capabilities": [
+      "Score items against your objectives",
+      "Pick 3 to 5 sgnls for an 18-hour cycle",
+      "Track done and blocked",
+      "Report a ratio at close"
+    ],
+    "websiteURL": "https://github.com/erichenschel/sgnl-plugin",
+    "supportURL": "https://github.com/erichenschel/sgnl-plugin/issues",
+    "privacyPolicyURL": "https://github.com/erichenschel/sgnl-plugin/blob/main/PRIVACY.md",
+    "termsOfServiceURL": "https://github.com/erichenschel/sgnl-plugin/blob/main/TERMS.md",
+    "defaultPrompt": [
+      "Set my SGNL objectives: 20 paying customers by Dec 31, 2026, app v2 live by Nov 15, 2026.",
+      "Open an SGNL cycle. It is Thu 2026-10-01 09:00. My plate: fix export bug, email 5 trial users, tidy desk.",
+      "Explain the SGNL method in five lines, then ask me for my objectives."
+    ],
+    "composerIcon": "./assets/icon.png",
+    "logo": "./assets/logo.png"
+  }
+}

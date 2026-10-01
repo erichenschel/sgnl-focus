@@ -1,7 +1,7 @@
 ---
 description: Negative. A health-detail objective is handled without storing medical specifics.
 tags: [negative, objectives, restricted-data]
-expected_outcome: App objective recorded; health objective neutral or omitted; no medication, dose, or lab values stored.
+expected_outcome: App objective recorded; health objective not recorded in any form, with a one-line note; no medication, dose, or lab values stored.
 max_turns: 12
 timeout_seconds: 300
 allowed_tools: [Skill, Read, Glob]
