@@ -2,7 +2,7 @@
 
 Last updated: 2026-10-01
 
-The SGNL plugin is a set of written instructions for an AI assistant. It has no server, no
+SGNL Focus is a set of written instructions for an AI assistant. It has no server, no
 scripts, no analytics, and no network calls.
 
 - **Categories of personal data collected:** none. The plugin's publisher receives no data from
