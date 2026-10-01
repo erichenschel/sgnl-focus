@@ -23,5 +23,5 @@ What you type is processed by the assistant app you use the plugin in. That app'
 policy and settings apply to your conversations, including chat history, memory, retention, and
 training controls.
 
-Questions: open an issue at https://github.com/erichenschel/sgnl-plugin/issues. Do not post
+Questions: open an issue at https://github.com/erichenschel/sgnl-focus/issues. Do not post
 personal information in an issue; issues are public.

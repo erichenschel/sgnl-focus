@@ -1,14 +1,14 @@
 {
-  "name": "sgnl-cycle",
-  "displayName": "SGNL Cycle",
+  "name": "sgnl-focus",
+  "displayName": "SGNL Focus",
   "version": "0.1.0",
   "description": "Run the SGNL method in a conversation: set 1 to 3 measurable objectives, open an 18-hour cycle from everything on your plate, get 3 to 5 sgnls with bits, report done or blocked, and close with a recap and ratio. Skills only.",
   "author": {
     "name": "Eric Henschel",
     "url": "https://github.com/erichenschel"
   },
-  "homepage": "https://github.com/erichenschel/sgnl-plugin",
-  "repository": "https://github.com/erichenschel/sgnl-plugin",
+  "homepage": "https://github.com/erichenschel/sgnl-focus",
+  "repository": "https://github.com/erichenschel/sgnl-focus",
   "license": "MIT",
   "keywords": [
     "planning",

@@ -1,8 +1,8 @@
-# SGNL Cycle
+# SGNL Focus
 
-![SGNL Cycle icon](assets/icon.png)
+![SGNL Focus icon](assets/icon.png)
 
-SGNL Cycle is a skills-only plugin with one skill, `sgnl-cycle`. It runs the SGNL method inside
+SGNL Focus is a skills-only plugin with one skill, `sgnl-cycle`. It runs the SGNL method inside
 one conversation: a fixed planning cycle where every item on your plate is scored against 1 to 3
 measurable objectives, only 3 to 5 items make the cut for the next 18 hours, the list does not
 change mid-cycle, you report only done or blocked, and you close with a ratio of focused hours
@@ -42,8 +42,8 @@ objectives. See [PRIVACY.md](PRIVACY.md).
 ### Claude Code
 
 ```bash
-claude plugin marketplace add erichenschel/sgnl-plugin
-claude plugin install sgnl-cycle@sgnl-plugin
+claude plugin marketplace add erichenschel/sgnl-focus
+claude plugin install sgnl-focus@sgnl-focus
 ```
 
 ### Claude apps (web and desktop)
@@ -55,7 +55,7 @@ Plugins in the Claude apps need a paid plan.
 
 ### ChatGPT desktop app (local testing)
 
-1. Copy this folder to `~/plugins/sgnl-cycle`.
+1. Copy this folder to `~/plugins/sgnl-focus`.
 2. Create `~/.agents/plugins/marketplace.json`:
 
 ```json
@@ -63,8 +63,8 @@ Plugins in the Claude apps need a paid plan.
   "name": "local-sgnl",
   "plugins": [
     {
-      "name": "sgnl-cycle",
-      "source": { "source": "local", "path": "./plugins/sgnl-cycle" },
+      "name": "sgnl-focus",
+      "source": { "source": "local", "path": "./plugins/sgnl-focus" },
       "policy": { "installation": "AVAILABLE", "authentication": "ON_INSTALL" },
       "category": "Productivity"
     }
@@ -73,7 +73,7 @@ Plugins in the Claude apps need a paid plan.
 ```
 
 3. Restart the ChatGPT desktop app, open the Plugins Directory, choose the `local-sgnl` source,
-   install SGNL Cycle, and start a new chat.
+   install SGNL Focus, and start a new chat.
 
 ## Starter prompts
 
@@ -94,7 +94,7 @@ Each works in a new chat. They are also the `defaultPrompt` entries in `.codex-p
 
 ## Support
 
-Open an issue at https://github.com/erichenschel/sgnl-plugin/issues. See [SUPPORT.md](SUPPORT.md).
+Open an issue at https://github.com/erichenschel/sgnl-focus/issues. See [SUPPORT.md](SUPPORT.md).
 
 ## License
 
