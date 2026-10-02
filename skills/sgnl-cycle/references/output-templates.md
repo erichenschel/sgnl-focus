@@ -11,18 +11,20 @@ text. Only the state block goes inside a `text` code block.
 Put this line first, once per chat:
 
 ```text
-This runs the SGNL method on what you tell me. The method keeps no record outside this chat; your app's chat history and memory settings still apply. Paste the state block to resume.
+This runs the SGNL method on what you tell me and what I already know here. The method keeps no record outside this chat; your app's chat history and memory settings still apply. Paste the state block to resume.
 ```
 
-## Objectives set
+## Objectives inferred
 
 ```text
 Objectives:
-O1. <end state> by <date>
-O2. <end state> by <date>
+O1. <Category > Subcategory (params)> by <date>
+    Evidence: <one line>
+O2. <Category > Subcategory (params)> by <date>
+    Evidence: <one line>
+Reply yes to confirm, or name any to dismiss or change.
 
-<If one is vague, one question with one suggestion:>
-O3 needs a measurable end state. Use "<suggestion> by <date>"? Reply yes or give your own.
+<If nothing can be inferred, instead:> What are you working toward this month?
 
 <If a health objective was given:>
 The method does not track health objectives. Set a non-health one if you want.
@@ -30,7 +32,7 @@ The method does not track health objectives. Set a non-health one if you want.
 <If an account, ID, or credential detail was given:>
 I keep no account, ID, or credential details. O2 is recorded as "<neutral version>".
 
-Open a cycle: give me the time and everything on your plate.
+<After confirm:> Open a cycle: give me the time and everything on your plate.
 
 <state block>
 ```
@@ -44,6 +46,7 @@ S1. <headline>
 Objective: O<n> <short objective>
 b1. Do: <action>. Expect: <result>.
 b2. Do: <action>. Expect: <result>.
+Offer: <what you can draft in chat>.
 
 S2. <headline>
 Objective: O<n> <short objective>
@@ -173,6 +176,15 @@ Reply with done (name the bits) or blocked.
 ```text
 Last cycle: ratio <n>%. <k> items carried.
 Open the next cycle: give me the time and your plate.
+
+<state block>
+```
+
+## Request to send, delete, merge, publish, or pay
+
+```text
+I draft; you send. <Draft.>
+Say done when you have sent it.
 
 <state block>
 ```

@@ -1,9 +1,12 @@
 ---
-description: Positive. Sets three objectives, one of them vague.
-tags: [positive, objectives]
-expected_outcome: Two objectives recorded with dates, one follow-up question for the writing objective, a state block.
+description: Positive. Infers objectives from pasted notes, one of them vague, and asks for one confirm.
+tags: [positive, objectives, inferred]
+expected_outcome: Catalog picks for the customer and app store objectives with dates and one line of evidence each, a concrete draft pick for the writing wish, one confirm-or-dismiss ask, a state block.
 max_turns: 12
 timeout_seconds: 300
 allowed_tools: [Skill, Read, Glob]
 ---
-Set my objectives. I want 20 paying customers for my bookkeeping app by Dec 31, 2026. I want v2 of the app live in the app store by Nov 15, 2026. And I want to get better at writing.
+Set my SGNL objectives. Here are my notes, use them:
+- bookkeeping app: goal is 20 paying customers by Dec 31, 2026
+- v2 of the app needs to be live in the app store by Nov 15, 2026
+- I keep saying I want to get better at writing

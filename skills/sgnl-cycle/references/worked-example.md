@@ -10,7 +10,7 @@ templates in [output-templates.md](output-templates.md).
 
 Reply:
 
-This runs the SGNL method on what you tell me. The method keeps no record outside this chat; your app's chat history and memory settings still apply. Paste the state block to resume.
+This runs the SGNL method on what you tell me and what I already know here. The method keeps no record outside this chat; your app's chat history and memory settings still apply. Paste the state block to resume.
 
 Objectives:
 O1. 20 paying customers for the bookkeeping app by 2026-12-31

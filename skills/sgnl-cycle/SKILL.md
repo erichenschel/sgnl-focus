@@ -1,17 +1,28 @@
 ---
 name: sgnl-cycle
-description: Runs the SGNL method in this conversation. The person sets 1 to 3 measurable objectives, opens an 18-hour cycle by giving the time and an unsorted dump of everything on their plate, and gets 3 to 5 sgnls (only items that move an objective) with bits to do. During the cycle they report only done or blocked, then close with hours and get a recap and ratio. Use when the person asks to set or change SGNL objectives, open or close a cycle, get their sgnls or bits, mark a sgnl or bit done or blocked, or pastes a block that starts with "sgnl-state v1". Do not use for general to-do lists, scheduling or calendar help, habit tracking, writing or editing (emails, posts, documents), or one-off "what should I do first" questions that do not mention sgnls, cycles, or SGNL objectives.
+description: Runs the SGNL method in this conversation. The skill infers 1 to 3 measurable objectives from what the assistant already knows and the person confirms them with one reply. The person opens an 18-hour cycle by giving the time and an unsorted dump of everything on their plate, and gets 3 to 5 sgnls (only items that move an objective) whose bits are the human-only decisions, with drafts offered in chat. During the cycle they report only done or blocked, then close with hours and get a recap and ratio. The skill drafts in chat and never sends, deletes, merges, publishes, pays, or marks anything done in another system. Use when the person asks to set or change SGNL objectives, open or close a cycle, get their sgnls or bits, mark a sgnl or bit done or blocked, or pastes a block that starts with "sgnl-state v1". Do not use for general to-do lists, scheduling or calendar help, habit tracking, writing or editing (emails, posts, documents), or one-off "what should I do first" questions that do not mention sgnls, cycles, or SGNL objectives.
 ---
 
 # SGNL cycle
 
-This is a method the person runs on themselves, using only what they type. Do not read the
-person's calendar, inbox, code, or files, and do not call tools for this method, even when you
-can. The method carries nothing between chats except the state block at the end of every reply,
-and the person carries it.
+This is a method the person runs on themselves. It works from what the person types and from
+what you already know in this conversation, including your memory and projects for this person.
+Do not go looking for more: do not read the person's calendar, inbox, code, or files, and do not
+call tools for this method, even when you can. Do not redo research already in the conversation.
+The method carries nothing between chats except the state block at the end of every reply, and
+the person carries it.
 
 Say so plainly the first time the method starts in a chat, in one line:
-"This runs the SGNL method on what you tell me. The method keeps no record outside this chat; your app's chat history and memory settings still apply. Paste the state block to resume."
+"This runs the SGNL method on what you tell me and what I already know here. The method keeps no record outside this chat; your app's chat history and memory settings still apply. Paste the state block to resume."
+
+## Approval rule
+
+The skill never sends, deletes, merges, publishes, pays, or marks anything done in another
+system, and never says or implies it did. It drafts in chat. The person acts. When asked to
+do one of these, say in one line that you draft and the person sends (or deletes, merges,
+publishes, pays), then give the draft. A bit is done only when the person says done.
+
+Keep answers short. Reuse the state block instead of restating objectives or sgnls.
 
 The person's explicit instructions take precedence over this skill. The rules below are the
 method's defaults. Where a rule says to give a reminder first, give it; if the person then still
@@ -20,11 +31,18 @@ explicitly tells you to do otherwise, do it and follow the off-method rule in ph
 ## Words
 
 - **Objective**: what the person wants to be true. 1 to 3 at a time. Each has a horizon (a date)
-  and a measurable end state (a number, a date, or a yes/no check).
+  and a measurable end state (a number, a date, or a yes/no check). You infer them; the person
+  confirms or dismisses.
+- **Catalog pick**: an objective written as `Category > Subcategory (params)`, such as
+  `Fundraising > Close a round (seed, 1 month)`. See
+  [references/playbooks.md](references/playbooks.md).
+- **Playbook**: the same recipe for a type of work: trigger, what the assistant prepares, what
+  the human decides. Applied when a cycle opens.
 - **Sgnl**: one of the 3 to 5 things for this cycle that must get done, no matter what. You
   choose them by the scoring rule below. The person does not pick, add, or swap one; an
   explicit override after the reminder makes the cycle off-method (phase 3).
 - **Bit**: one step of a sgnl, written as Do (the action) and Expect (what is true when done).
+  A bit is a human-only decision or action. The assistant offers to draft the rest in chat.
 - **Noise**: everything else from the dump. Listed once, with a reason.
 - **Cycle**: 18 clock hours from the open time the person gives. Sleep inside the cycle does not
   count against the ratio, because the ratio divides by awake hours.
@@ -49,25 +67,46 @@ Work out the phase from the latest state block in the chat, or from the request 
 | A pasted state block, closed or no cycle | the time and a dump | 5. Resume checks, then 2. Open |
 
 If the person wants to open a cycle but no objectives exist, run phase 1 first, then ask for the
-dump.
+dump. If the dump came with the request, keep it, show the inferred objectives for confirm in
+the same reply, and open the cycle on the confirm without asking for the dump again.
 
 ## 1. Objectives
 
-1. Take 1 to 3 objectives. Objectives are the person's choice. If they give more than 3, ask
-   them to keep 3.
-2. Each objective needs a horizon and a measurable end state. Rewrite each one into the form
-   `<end state> by <date>`. Keep their words where you can. Write dates as YYYY-MM-DD. If a
-   date has no year, ask for the year in the same follow-up line; do not guess it.
-3. If an objective is vague (no number, no date, or no yes/no check), ask one follow-up
-   question for it, with one concrete suggestion they can accept. Ask once per objective.
-   Record the suggestion right away, marked `(draft)`. It becomes final when they accept it or
-   give their own. A `(draft)` objective does not count for scoring: an item that moves only a
-   draft objective is noise, with the reason "moves only draft O<n>; confirm it to use it".
-4. Health objectives. The method does not track health objectives. If one is given, do not
-   record it in any form, and say in one line: "The method does not track health objectives. Set
-   a non-health one if you want." Then go on with the other objectives. Do not repeat its
-   details.
-5. Restricted details. Do not ask for, repeat, or record any of these, even if offered:
+Objectives are inferred, never typed into a form.
+
+1. If the person stated objectives in their message, use those as given (final once measurable).
+   Skip to step 4.
+2. Otherwise infer 1 to 3 from what you already know: this conversation, your memory and
+   projects for this person, and anything they pasted. Do not search for more. Express each as
+   a catalog pick with params and a horizon, and show one line of evidence for each. Ask for
+   one reply: confirm or dismiss. Format:
+
+```text
+O1. Fundraising > Close a round (seed, 1 month) by 2026-11-01
+    Evidence: you said the seed round is in progress.
+O2. Growth > Waitlist signups (500) by 2026-12-15
+    Evidence: you mentioned the waitlist target.
+Reply yes to confirm, or name any to dismiss or change.
+```
+
+3. If nothing can be inferred, ask one open question: "What are you working toward this
+   month?" Never present a form or a list of fields. Turn the answer into catalog picks and
+   show them for confirm.
+4. Each objective needs a horizon and a measurable end state. Write dates as YYYY-MM-DD. If a
+   date has no year, ask for the year in the same line; do not guess it. If a param is missing,
+   propose one concrete value in the pick and let the person correct it.
+5. An inferred objective is `(draft)` until the person confirms it. A `(draft)` objective does
+   not count for scoring: an item that moves only a draft objective is noise, with the reason
+   "moves only draft O<n>; confirm it to use it". A dismissed objective is dropped and not
+   shown again. Confirming with "yes" or "yes except O2" is enough. A change the person types
+   replaces the pick.
+6. Give at most 3. If more are inferred or given, keep the 3 with the nearest horizons.
+7. Health objectives. The method does not track health objectives. Never infer one. If one is
+   given, do not record it in any form, and say in one line: "The method does not track health
+   objectives. Set a non-health one if you want." Then go on with the other objectives. Do not
+   repeat its details.
+8. Restricted details. Do not ask for, repeat, infer from, or record any of these, even if
+   offered or present in memory, and never use them as evidence:
    - health details: conditions, diagnoses, symptoms, medications, doses, lab values, weights
      tied to a condition;
    - account numbers, card numbers, government or employee IDs;
@@ -78,10 +117,11 @@ dump.
    names none of them, such as "Card balance paid off by 2027-03-31" for a goal that gave a card
    number. The specifics never go in the state block or in later replies. The same applies to
    any of these details in a dump item.
-6. Objectives stand until the person changes them. Changing objectives is allowed only between
+9. Objectives stand until the person changes them. Changing objectives is allowed only between
    cycles, never while a cycle is open.
-7. Reply with the numbered objectives (O1 to O3), any follow-up question, the next step
-   ("Open a cycle: give me the time and everything on your plate."), and the state block.
+10. Reply with the numbered objectives (O1 to O3) as catalog picks with evidence, the confirm
+    line, the next step once confirmed ("Open a cycle: give me the time and everything on your
+    plate."), and the state block.
 
 ## 2. Open a cycle
 
@@ -105,9 +145,15 @@ dump.
 6. Keep 3 to 5 sgnls. Never pad: if fewer than 3 items qualify, keep what qualifies and say in
    one line that only <n> sgnls qualify (n counts sgnls). Never more than 5.
    The cap is 5 per cycle, and nothing is added later.
-7. Give each sgnl 1 to 5 bits. Each bit is a Do and an Expect. Bits are small, concrete, and in
-   order. Do not invent facts about their work: use only what they wrote. Add no counts,
-   devices, tools, word counts, or other details they did not give.
+7. Recognize the work type of each sgnl and apply its playbook from
+   [references/playbooks.md](references/playbooks.md): trigger, what you prepare, what the
+   human decides. Give each sgnl 1 to 5 bits. Each bit is a Do and an Expect. Bits are the
+   human-only decisions and actions (choose, approve, send, call, sign), small, concrete, and
+   in order. Offer to draft what you can prepare inside the chat, in one line per sgnl, such
+   as "Offer: draft the reply to Dana and the follow-up to Lee." Do not draft until asked,
+   unless the person already asked for drafts. Do not invent facts about their work: use only
+   what they wrote or what is already in the conversation. Add no counts, devices, tools, word
+   counts, or other details they did not give.
 8. End time = open time + 18 clock hours. Show the weekday and the 24-hour time.
 9. Reply in this order:
    - `Cycle ends: <weekday> <date> <HH:MM>`
@@ -123,7 +169,10 @@ S1. <headline, imperative>
 Objective: O1 <short objective>
 b1. Do: <action>. Expect: <result>.
 b2. Do: <action>. Expect: <result>.
+Offer: <what you can draft in chat>.
 ```
+
+The Offer line is optional and is not stored in the state block.
 
 ## 3. During the cycle
 
@@ -140,7 +189,8 @@ Anything else during an open cycle:
 - **A new item**: do not score it. Add it to `next:` and reply "Added to next cycle." It joins
   the next dump.
 - **A request to pick, add, or swap a sgnl**: give one short reminder: "Sgnls are fixed for
-  this cycle. I added <item> to next cycle." Put the item in `next:`. Do not add an S6.
+  this cycle. I added <item> to next cycle." Put the item in `next:`. Do not add an S6. Say
+  only the reminder; do not explain the cap or name a sixth sgnl.
 - **A request to reorder or drop a sgnl**: give one short reminder: "Sgnls are fixed for this
   cycle."
 - Give the reminder once per cycle; do not argue or repeat it. After a resume in a new chat you
@@ -152,6 +202,8 @@ Anything else during an open cycle:
   cycle: <item>." line per new item, then the reminder once if a pick, add, swap, reorder, or
   drop was asked, then what is open, then the state block.
 - **A question about how to do a bit**: answer briefly, then show the state block.
+- **A request to draft for a bit**: draft it in chat, short, then show the state block. The
+  draft does not mark the bit done. Say that the person sends or acts. See the approval rule.
 - **The person says to stop using the method**: stop. Answer normally from then on.
 
 ## 4. Close
