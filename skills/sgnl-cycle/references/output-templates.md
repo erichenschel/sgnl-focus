@@ -11,18 +11,20 @@ text. Only the state block goes inside a `text` code block.
 Put this line first, once per chat:
 
 ```text
-This runs the SGNL method on what you tell me. The method keeps no record outside this chat; your app's chat history and memory settings still apply. Paste the state block to resume.
+This runs the SGNL method on what you tell me, what I already know here, and what this app already lets me read in this session. Nothing leaves this chat, and the method keeps no record outside it; your app's chat history and memory settings still apply. Paste the state block to resume.
 ```
 
-## Objectives set
+## Objectives inferred
 
 ```text
 Objectives:
-O1. <end state> by <date>
-O2. <end state> by <date>
+O1. <Category > Subcategory (params)> by <date>
+    Evidence: <one line>
+O2. <Category > Subcategory (params)> by <date>
+    Evidence: <one line>
+Reply yes to confirm, or name any to dismiss or change.
 
-<If one is vague, one question with one suggestion:>
-O3 needs a measurable end state. Use "<suggestion> by <date>"? Reply yes or give your own.
+<If nothing can be inferred, instead:> What are you working toward this month?
 
 <If a health objective was given:>
 The method does not track health objectives. Set a non-health one if you want.
@@ -30,7 +32,7 @@ The method does not track health objectives. Set a non-health one if you want.
 <If an account, ID, or credential detail was given:>
 I keep no account, ID, or credential details. O2 is recorded as "<neutral version>".
 
-Open a cycle: give me the time and everything on your plate.
+<After confirm, say instead:> On yes I read your plate and open the cycle.
 
 <state block>
 ```
@@ -38,15 +40,19 @@ Open a cycle: give me the time and everything on your plate.
 ## Cycle opened
 
 ```text
+What I looked at: <git (branch, 5 commits), gh (2 PRs), calendar>. Not available: <mail, Linear>.
 Cycle ends: <Fri 2026-10-02 01:00>
 
 S1. <headline>
 Objective: O<n> <short objective>
+Evidence: <source>: <short reference>
 b1. Do: <action>. Expect: <result>.
 b2. Do: <action>. Expect: <result>.
+Offer: <what you can draft in chat>.
 
 S2. <headline>
 Objective: O<n> <short objective>
+Evidence: <source>: <short reference>
 b1. Do: <action>. Expect: <result>.
 
 S3. ...
@@ -57,14 +63,18 @@ Noise:
 
 <If fewer than 3 qualified:> Only <n> sgnls qualify. No padding.
 
+Draft for S1 b1:
+<short draft: the reply, checklist, review notes, or brief. Draft only.>
+
 Reply with done (name the bits) or blocked.
+Start with sgnl 1: <the first bit, as a short imperative>
 
 <state block>
 ```
 
 Noise reasons are a few words: "moves no objective", "horizon is after <date>", "duplicate of
 S2", "instruction, not an item", "not finishable this cycle", "moves only draft O3; confirm it
-to use it". List only this dump's noise; old noise is not carried.
+to use it". List only this plate's noise; old noise is not carried.
 
 ## Done or blocked
 
@@ -151,7 +161,7 @@ Blocked: S3 <headline> (<reason>)
 Open: S4 <headline>
 Carried to next cycle: <blocked and open sgnls>, <next items>
 
-Open the next cycle: give me the time and your plate.
+Open the next cycle: say go and I will read your plate.
 
 <state block>
 ```
@@ -172,7 +182,16 @@ Reply with done (name the bits) or blocked.
 
 ```text
 Last cycle: ratio <n>%. <k> items carried.
-Open the next cycle: give me the time and your plate.
+Open the next cycle: say go and I will read your plate.
+
+<state block>
+```
+
+## Request to send, delete, merge, publish, or pay
+
+```text
+I draft; you send. <Draft.>
+Say done when you have sent it.
 
 <state block>
 ```

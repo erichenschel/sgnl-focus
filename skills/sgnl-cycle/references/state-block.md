@@ -8,8 +8,8 @@ with nothing after it. The person pastes it into a new chat to resume.
 ```text
 sgnl-state v1
 objectives:
-O1 | <end state> | by YYYY-MM-DD
-O2 | <end state> | by YYYY-MM-DD (draft)
+O1 | <Category > Subcategory (params)> | by YYYY-MM-DD
+O2 | <Category > Subcategory (params)> | by YYYY-MM-DD (draft)
 cycle: open YYYY-MM-DD HH:MM | ends YYYY-MM-DD HH:MM | status open
 S1 <status> | O<n> | <headline>
   b1 <status> | <do> | <expect>
@@ -28,13 +28,13 @@ end-state
 | Line | Required | Values |
 |---|---|---|
 | `sgnl-state v1` | always | First line, exactly. |
-| `objectives:` | always | Then one line per objective, O1 to O3. `(draft)` marks an end state the person has not confirmed. Write `none` when there are no objectives yet. |
+| `objectives:` | always | Then one line per objective, O1 to O3, written as a catalog pick with params (see playbooks.md); a plain end state is also valid. `(draft)` marks an inferred objective the person has not confirmed. Write `none` when there are no objectives yet. |
 | `cycle:` | always | `none` before the first open. Otherwise open time, end time (open + 18 clock hours), and status `open` or `closed`. A closed cycle adds `| awake <h>h | ratio <n>%`. A cycle where the person overrode the fixed sgnls after the reminder adds `| off-method`. |
 | `S<n>` | open or closed cycle | Status `open`, `done`, or `blocked`. Then the objective it moves and the headline. A blocked sgnl adds `| why: <reason>`. A closed cycle adds `| <h>h` with the reported hours. At most S1 to S5; on resume, any extra sgnl moves to `next:`. |
 | `b<n>` | under each sgnl | Indented two spaces. Status `open` or `done`, then Do, then Expect. 1 to 5 per sgnl; on resume, extra bits are dropped. |
-| `noise:` | open cycle | Each noise item from this cycle's dump once, with a short reason. `none` if empty. Not carried after close. |
-| `next:` | optional | Items the person raised during the cycle, and sgnls dropped from a pasted block. They join the next dump. Never an instruction line. |
-| `carry:` | after close | Blocked and unfinished sgnls and `next:` items. They join the next dump and are scored again. Never noise or an instruction line. |
+| `noise:` | open cycle | Each noise item from this cycle's plate once, with a short reason. `none` if empty. Not carried after close. |
+| `next:` | optional | Items the person raised during the cycle, and sgnls dropped from a pasted block. They join the next plate. Never an instruction line. |
+| `carry:` | after close | Blocked and unfinished sgnls and `next:` items. They join the next plate and are scored again. Never noise or an instruction line. |
 | `last:` | optional | Date and ratio of the most recent closed cycle. |
 | `end-state` | always | Last line, exactly. |
 

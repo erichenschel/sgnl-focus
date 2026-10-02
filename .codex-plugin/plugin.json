@@ -1,7 +1,7 @@
 {
   "name": "sgnl-focus",
-  "version": "0.1.0",
-  "description": "Run the SGNL method in a conversation: set 1 to 3 measurable objectives, open an 18-hour cycle from everything on your plate, get 3 to 5 sgnls with bits, report done or blocked, and close with a recap and ratio. Skills only.",
+  "version": "0.3.0",
+  "description": "Run the SGNL method in a conversation: confirm 1 to 3 objectives inferred from what your assistant already knows, open an 18-hour cycle from a plate it reads itself (read-only, from what your app already lets it access), get 3 to 5 sgnls with evidence and the first bit already drafted, report done or blocked, and close with a recap and ratio. Drafts only: it never sends or changes anything in another system. Skills only.",
   "author": {
     "name": "Eric Henschel",
     "url": "https://github.com/erichenschel"
@@ -20,12 +20,13 @@
   "interface": {
     "displayName": "SGNL Focus",
     "shortDescription": "Run 18-hour objective cycles",
-    "longDescription": "A fixed planning cycle you run in chat. You set 1 to 3 objectives, each with a date and a measurable end state. To open an 18-hour cycle, you paste everything on your plate, unsorted. Each item is scored against your objectives: only items that move an objective's end state inside its horizon become sgnls, capped at 3 to 5, each split into small do-and-expect bits. Everything else is listed once as noise. The sgnls stay fixed for the cycle, and you report only done or blocked. At close you give hours, and you get a ratio of sgnl hours to awake hours against a target of 80 percent and a floor of 50. Every reply ends with a short state block you can paste into a new chat to resume. The plugin keeps no record outside your chat and makes no network calls.",
+    "longDescription": "A fixed planning cycle you run in chat. On first use it infers 1 to 3 objectives from what your assistant already knows and shows one line of evidence for each; you confirm or dismiss with one reply. To open an 18-hour cycle, the assistant reads your plate itself, read-only, from what your app already gives it in this session (clock, repo state, notes, and any connected mail, calendar, issue tracker, docs, or chat tools), so you type nothing. Each item is scored against your objectives: only items that move an objective's end state inside its horizon become sgnls, capped at 3 to 5. A playbook for the type of work (fundraising, email funnel, ship and test, sales, hiring, support, updates, content) makes each bit a decision only you can make, each sgnl shows its evidence, and the assistant drafts the first bit of sgnl 1 at once and offers the rest in chat. It drafts; you send. It never sends, deletes, merges, publishes, pays, or marks anything done in another system. Everything else is listed once as noise. The sgnls stay fixed for the cycle, and you report only done or blocked. At close you give hours, and you get a ratio of sgnl hours to awake hours against a target of 80 percent and a floor of 50. Every reply ends with a short state block you can paste into a new chat to resume. The plugin itself runs no code and keeps no record outside your chat; data it reads comes only through tools your app already provides, and nothing leaves the chat.",
     "developerName": "Eric Henschel",
     "category": "Productivity",
     "capabilities": [
-      "Score items against your objectives",
+      "Infer objectives you confirm",
       "Pick 3 to 5 sgnls for an 18-hour cycle",
+      "Draft in chat, never send",
       "Track done and blocked",
       "Report a ratio at close"
     ],
@@ -34,9 +35,9 @@
     "privacyPolicyURL": "https://github.com/erichenschel/sgnl-focus/blob/main/PRIVACY.md",
     "termsOfServiceURL": "https://github.com/erichenschel/sgnl-focus/blob/main/TERMS.md",
     "defaultPrompt": [
-      "Set my SGNL objectives: 20 paying customers by Dec 31, 2026, app v2 live by Nov 15, 2026.",
-      "Open an SGNL cycle. It is Thu 2026-10-01 09:00. My plate: fix export bug, email 5 trial users, tidy desk.",
-      "Explain the SGNL method in five lines, then ask me for my objectives."
+      "Start my SGNL. Infer my objectives from what you know about my work and show me the evidence.",
+      "Open my SGNL cycle. Read my plate yourself and start the first bit.",
+      "Explain the SGNL method in five lines, then propose my objectives."
     ],
     "composerIcon": "./assets/icon.png",
     "logo": "./assets/logo.png"
