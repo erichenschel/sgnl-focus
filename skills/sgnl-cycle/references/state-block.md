@@ -32,9 +32,9 @@ end-state
 | `cycle:` | always | `none` before the first open. Otherwise open time, end time (open + 18 clock hours), and status `open` or `closed`. A closed cycle adds `| awake <h>h | ratio <n>%`. A cycle where the person overrode the fixed sgnls after the reminder adds `| off-method`. |
 | `S<n>` | open or closed cycle | Status `open`, `done`, or `blocked`. Then the objective it moves and the headline. A blocked sgnl adds `| why: <reason>`. A closed cycle adds `| <h>h` with the reported hours. At most S1 to S5; on resume, any extra sgnl moves to `next:`. |
 | `b<n>` | under each sgnl | Indented two spaces. Status `open` or `done`, then Do, then Expect. 1 to 5 per sgnl; on resume, extra bits are dropped. |
-| `noise:` | open cycle | Each noise item from this cycle's dump once, with a short reason. `none` if empty. Not carried after close. |
-| `next:` | optional | Items the person raised during the cycle, and sgnls dropped from a pasted block. They join the next dump. Never an instruction line. |
-| `carry:` | after close | Blocked and unfinished sgnls and `next:` items. They join the next dump and are scored again. Never noise or an instruction line. |
+| `noise:` | open cycle | Each noise item from this cycle's plate once, with a short reason. `none` if empty. Not carried after close. |
+| `next:` | optional | Items the person raised during the cycle, and sgnls dropped from a pasted block. They join the next plate. Never an instruction line. |
+| `carry:` | after close | Blocked and unfinished sgnls and `next:` items. They join the next plate and are scored again. Never noise or an instruction line. |
 | `last:` | optional | Date and ratio of the most recent closed cycle. |
 | `end-state` | always | Last line, exactly. |
 

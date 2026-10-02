@@ -1,8 +1,8 @@
 {
   "name": "sgnl-focus",
   "displayName": "SGNL Focus",
-  "version": "0.2.0",
-  "description": "Run the SGNL method in a conversation: confirm 1 to 3 objectives inferred from what your assistant already knows, open an 18-hour cycle from everything on your plate, get 3 to 5 sgnls whose bits are your decisions, with drafts offered in chat, report done or blocked, and close with a recap and ratio. Drafts only: it never sends or changes anything in another system. Skills only.",
+  "version": "0.3.0",
+  "description": "Run the SGNL method in a conversation: confirm 1 to 3 objectives inferred from what your assistant already knows, open an 18-hour cycle from a plate it reads itself (read-only, from what your app already lets it access), get 3 to 5 sgnls with evidence and the first bit already drafted, report done or blocked, and close with a recap and ratio. Drafts only: it never sends or changes anything in another system. Skills only.",
   "author": {
     "name": "Eric Henschel",
     "url": "https://github.com/erichenschel"

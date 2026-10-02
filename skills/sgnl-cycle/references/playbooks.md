@@ -27,8 +27,8 @@ do not use them as evidence.
 ## Playbooks
 
 Recognize the work type of each sgnl and use its recipe. Each recipe is trigger, what you
-prepare, what the human decides. The bits are the human column. Offer the prepare column as
-drafts in chat, in one Offer line. Draft only when asked. Never send, delete, merge, publish,
+prepare, what the human decides. The bits are the human column. Draft the first bit of S1 at
+once; offer the rest of the prepare column in one Offer line and draft it when asked. Never send, delete, merge, publish,
 pay, or mark anything done in another system. The human acts.
 
 | Playbook | Trigger | You prepare (offer, draft in chat) | The human decides (bits) |
