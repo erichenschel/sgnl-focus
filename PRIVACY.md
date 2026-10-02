@@ -1,6 +1,6 @@
 # Privacy
 
-Last updated: 2026-10-01
+Last updated: 2026-10-02
 
 SGNL Focus is a set of written instructions for an AI assistant. It has no server, no
 scripts, no analytics, and no network calls.
@@ -18,6 +18,8 @@ scripts, no analytics, and no network calls.
 The skill does not ask for health details, account numbers, government or other IDs, or
 credentials, leaves them out of the state block if you offer them, and does not track health
 objectives.
+
+Inferring objectives uses only context your assistant app already holds in the conversation and its memory. The skill does not search your files, inbox, or calendar, and does not send or change anything in another system.
 
 What you type is processed by the assistant app you use the plugin in. That app's own privacy
 policy and settings apply to your conversations, including chat history, memory, retention, and

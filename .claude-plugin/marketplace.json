@@ -9,7 +9,7 @@
     {
       "name": "sgnl-focus",
       "source": "./",
-      "description": "Run the SGNL method in a conversation: objectives, an 18-hour cycle, 3 to 5 sgnls with bits, done or blocked, and a closing recap and ratio.",
+      "description": "Run the SGNL method in a conversation: inferred objectives you confirm, an 18-hour cycle, 3 to 5 sgnls with bits, playbooks that draft in chat, done or blocked, and a closing recap and ratio.",
       "category": "productivity"
     }
   ]
