@@ -40,12 +40,12 @@ I keep no account, ID, or credential details. O2 is recorded as "<neutral versio
 ## Cycle opened
 
 ```text
-What I looked at: <git (branch, 5 commits), gh (2 PRs), calendar>. Not available: <mail, Linear>.
+What I looked at: <our conversation, calendar (3 meetings), mail (4 threads)>. <Name only sources actually read.>
 Cycle ends: <Fri 2026-10-02 01:00>
 
 S1. <headline>
 Objective: O<n> <short objective>
-Evidence: <source>: <short reference>
+Evidence: <source, e.g. mail or calendar>: <short reference>
 b1. Do: <action>. Expect: <result>.
 b2. Do: <action>. Expect: <result>.
 Offer: <what you can draft in chat>.

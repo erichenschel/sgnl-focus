@@ -24,11 +24,12 @@ draft and says you send it.
    confirm or dismiss with one reply. If nothing can be inferred, it asks one question: "What
    are you working toward this month?" You never fill a form.
 2. **Open a cycle.** Say "go". The skill gathers your plate first, read-only and bounded (about
-   10 tool calls, the last 7 days): the date and time; in a coding host with a shell, git status,
-   branch and recent commits, open PRs and review requests via `gh`, TODO and memory files, and,
-   when `HERDR_ENV=1`, your other agent sessions via `herdr agent list`; and, on any host, recent
-   items from connected mail, calendar, issue tracker (such as Linear), docs, or chat tools if
-   they are available. A "What I looked at" line lists sources used and unavailable. It scores
+   10 tool calls, the last 7 days), in this order: today's date; the conversation and what the
+   assistant remembers about you; recent items from connected calendar, mail, docs, chat, or
+   issue tracker tools (such as Linear or Asana) if you have them; and, only if they exist,
+   developer sources (git, `gh`, `herdr agent list`, TODO files). You do not need git or a
+   terminal. If there is nothing to read, it asks one question: "What's on your plate today?" A
+   "What I looked at" line names only what was found. It scores
    each item against your objectives and returns 3 to 5 sgnls, the items that move an objective
    inside its horizon, each with an `Evidence:` pointer. Each sgnl has 1 to 5 bits (do, expect).
    The skill applies a playbook: trigger, what the assistant prepares, what you decide. Your

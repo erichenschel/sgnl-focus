@@ -63,7 +63,7 @@ Every bit below uses only facts from the dump.
 
 Reply:
 
-What I looked at: your message. Not available: git, gh, calendar, mail, Linear.
+What I looked at: your message.
 Cycle ends: Fri 2026-10-02 01:00
 
 S1. Fix the export crash
