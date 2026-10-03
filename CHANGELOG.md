@@ -1,5 +1,20 @@
 # Changelog
 
+## 0.3.1 - 2026-10-03
+
+- Works without developer tools. The plate is gathered in this order: today's date; the
+  conversation and memory; connected tools (calendar, email, docs, chat, Linear, Asana); then
+  developer sources (git, `gh`, herdr sessions, local files) only if they exist. Developer
+  sources are optional extras.
+- The `What I looked at` line names only what was found. It never mentions a missing tool.
+- With no connected tools and nothing in the conversation, the skill asks one short question
+  ("What's on your plate today?") and still returns sgnls after the answer.
+- Plain words: no developer jargon (git, PR, repo, commit, deploy, branch, terminal) unless the
+  person uses that tool. Raw ticket and change ids only for people who use that tool.
+- Evals: added `non-technical-ceo-phone` and `zero-connectors-asks-once`, both failing on
+  developer jargon or a mention of a missing tool. Stricter graders on the existing cases (see
+  the PR for the grader review).
+
 ## 0.3.0 - 2026-10-02
 
 - Opening a cycle no longer asks for the time or a plate. The skill gathers the plate itself,
